@@ -23,85 +23,85 @@ describe "Testing de Roxana"{
     }
 
     test "Lleva 2km a Teresa sin modificar el valor por kilometro pactado"{
-        assert.equals(44, roxana.precioViaje(teresa,22))
+        assert.equals(44, roxana.precioViaje(teresa,2))
     }
 }
 
 describe "Testing de Gabriela"{
     test "Lleva 10km a Ludmila"{
-        assert.equals(216, roxana.precioViaje(ludmila,10))
+        assert.equals(216, gabriela.precioViaje(ludmila,10))
     }
 
     test "Lleva 10km a Ana Maria economicamente estable"{
-        assert.equals(360, roxana.precioViaje(anaMaria,10))
+        assert.equals(360, gabriela.precioViaje(anaMaria,10))
     }
 
     test "Lleva 10km a Teresa sin modificar el valor por kilometro pactado"{
-        assert.equals(264, roxana.precioViaje(teresa,10))
+        assert.equals(264, gabriela.precioViaje(teresa,10))
     }
 
     test "Lleva 2km a Ludmila"{
-        assert.equals(43.20, roxana.precioViaje(ludmila,2))
+        assert.equals(43.20, gabriela.precioViaje(ludmila,2))
     }
 
     test "Lleva 2km a Ana Maria economicamente estable"{
-        assert.equals(72, roxana.precioViaje(anaMaria,2))
+        assert.equals(72, gabriela.precioViaje(anaMaria,2))
     }
 
     test "Lleva 2km a Teresa sin modificar el valor por kilometro pactado"{
-        assert.equals(52.80, roxana.precioViaje(teresa,2))
+        assert.equals(52.80, gabriela.precioViaje(teresa,2))
     }
 }
 
 describe "Testing de Mariela"{
     test "Lleva 10km a Ludmila"{
-        assert.equals(180, roxana.precioViaje(ludmila,10))
+        assert.equals(180, mariela.precioViaje(ludmila,10))
     }
 
     test "Lleva 10km a Ana Maria economicamente estable"{
-        assert.equals(300, roxana.precioViaje(anaMaria,10))
+        assert.equals(300, mariela.precioViaje(anaMaria,10))
     }
 
     test "Lleva 10km a Teresa sin modificar el valor por kilometro pactado"{
-        assert.equals(220, roxana.precioViaje(teresa,10))
+        assert.equals(220, mariela.precioViaje(teresa,10))
     }
 
     test "Lleva 2km a Ludmila"{
-        assert.equals(50, roxana.precioViaje(ludmila,2))
+        assert.equals(50, mariela.precioViaje(ludmila,2))
     }
 
     test "Lleva 2km a Ana Maria economicamente estable"{
-        assert.equals(50, roxana.precioViaje(anaMaria,2))
+        assert.equals(60, mariela.precioViaje(anaMaria,2))
     }
 
     test "Lleva 2km a Teresa sin modificar el valor por kilometro pactado"{
-        assert.equals(60, roxana.precioViaje(teresa,2))
+        assert.equals(50, mariela.precioViaje(teresa,2))
     }
 }
 
 describe "Testing de Juana"{
     test "Lleva 10km a Ludmila"{
-        assert.equals(200, roxana.precioViaje(ludmila,10))
+        assert.equals(200, juana.precioViaje(ludmila,10))
     }
 
     test "Lleva 10km a Ana Maria economicamente estable"{
-        assert.equals(200, roxana.precioViaje(anaMaria,10))
+        assert.equals(200, juana.precioViaje(anaMaria,10))
     }
 
     test "Lleva 10km a Teresa sin modificar el valor por kilometro pactado"{
-        assert.equals(200, roxana.precioViaje(teresa,10))
+        assert.equals(200, juana.precioViaje(teresa,10))
     }
 
     test "Lleva 2km a Ludmila"{
-        assert.equals(100, roxana.precioViaje(ludmila,2))
+        assert.equals(100, juana.precioViaje(ludmila,2))
     }
 
     test "Lleva 2km a Ana Maria economicamente estable"{
-        assert.equals(100, roxana.precioViaje(anaMaria,2))
+        assert.equals(100, juana.precioViaje(anaMaria,2))
     }
 
     test "Lleva 2km a Teresa sin modificar el valor por kilometro pactado"{
-        assert.equals(100, roxana.precioViaje(teresa,2))
+        assert.equals(100, juana.precioViaje(teresa,2))
     }
 }
 
@@ -111,19 +111,19 @@ describe "Testing de Lucia"{
     }
 
     test "Puede reemplazar a Roxana"{
-        assert.doesNotThowException({lucia.remiseraReemplazada(roxana)})
+        assert.doesNotThrowException({lucia.remiseraReemplazada(roxana)})
     }
 
     test "Puede reemplazar a Gabriela"{
-        assert.doesNotThowException({lucia.remiseraReemplazada(gabriela)})
+        assert.doesNotThrowException({lucia.remiseraReemplazada(gabriela)})
     }
 
     test "Puede reemplazar a Mariela"{
-        assert.doesNotThowException({lucia.remiseraReemplazada(mariela)})
+        assert.doesNotThrowException({lucia.remiseraReemplazada(mariela)})
     }
 
     test "Puede reemplazar a Juana"{
-        assert.doesNotThowException({lucia.remiseraReemplazada(juana)})
+        assert.doesNotThrowException({lucia.remiseraReemplazada(juana)})
     }
 
     test "Reemplaza a Mariela y lleva 10km a Melina que reemplaza a Ludmila"{

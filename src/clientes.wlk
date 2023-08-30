@@ -18,7 +18,7 @@ object teresa{
     var property valorKm = 22
 }
 
-object Melina{
+object melina{
     var clienteReemplazada 
 
     method clienteReemplazada(cliente){

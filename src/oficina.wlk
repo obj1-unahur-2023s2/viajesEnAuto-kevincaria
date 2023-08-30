@@ -1,7 +1,7 @@
 import clientes.*
 import remiseras.*
 
-object ofina{
+object oficina{
     var primerRemisera
     var segundoRemisera
 

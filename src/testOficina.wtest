@@ -5,7 +5,7 @@ import oficina.*
 describe "Test de oficina"{
     test "Juana hace un viaje a Ana Maria de 10km porque su precio es mejor al de Roxana"{
         oficina.asignarRemiseras(roxana,juana)
-        assert.equals(200,oficina.remiseraElegidaParaViaje(anaMaria,10).precioViaje(anaMaria,10))
+        assert.equals(200, oficina.remiseraElegidaParaViaje(anaMaria,10).precioViaje(anaMaria,10))
     }
 
     test "Roxana hace un viaje a Teresa de 10km porque su la diferencia de precio con Juana es menor a 30pesos"{
