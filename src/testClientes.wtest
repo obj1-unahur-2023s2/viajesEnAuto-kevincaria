@@ -1,0 +1,64 @@
+import clientes.*
+
+describe "Testing de Ludmila"{
+
+    test "El valor de kilometro es 18"{
+        assert.equals(18, ludmila.valorKm())
+    }
+}
+
+describe "Testing de Ana Maria"{
+
+    test "Esta economicamente estable"{
+        assert.that(anaMaria.revertirEconomicamenteEstable())
+    }
+
+    test "No esta economicamente estable"{
+        anaMaria.revertirEconomicamenteEstable()
+        assert.notThat(anaMaria.economicamenteEstable())
+    }
+
+    test "El valor del kilometro es 30 porque esta economicamente estable"{
+        assert.equals(30, anaMaria.valorKm())
+    }
+
+    test "El valor del kilometro es 25 porque no esta economicamente estable"{
+        anaMaria.revertirEconomicamenteEstable()
+        assert.equals(25, anaMaria.valorKm())
+    }
+}
+
+describe "Testing de Teresa"{
+    
+    test "El valor de kilometro es 22"{
+        assert.equals(22, teresa.valorKm())
+    }
+
+    test "El valor de kilometro es 35 cuando lo setteamos en 35"{
+        teresa.valorKm(35)
+        assert.equals(35, teresa.valorKm())
+    }
+}
+
+describe "Testing de Melina"{
+    test "No puede reemplazarse a si misma"{
+        assert.throwsExceptionWithMessage("No se puede reemplazar a si misma", {melina.clienteReemplazada(melina)})
+    }
+
+    test "Puede reemplazar a Ludmila"{
+        assert.doesNotThowException({melina.remiseraReemplazada(ludmila)})
+    }
+
+    test "Puede reemplazar a Ana Maria"{
+        assert.doesNotThowException({melina.remiseraReemplazada(anaMaria)})
+    }
+
+    test "Puede reemplazar a Teresa"{
+        assert.doesNotThowException({melina.remiseraReemplazada(teresa)})
+    }
+
+    test "Melina reemplaza a Ludmila entonces su valor de kilometro es 15"{
+        melina.clienteReemplazada(ludmila)
+        assert.equals(15, melina.valorKm())
+    }
+}

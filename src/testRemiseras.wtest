@@ -1,0 +1,152 @@
+import clientes.*
+import remiseras.*
+
+describe "Testing de Roxana"{
+    test "Lleva 10km a Ludmila"{
+        assert.equals(180, roxana.precioViaje(ludmila,10))
+    }
+
+    test "Lleva 10km a Ana Maria economicamente estable"{
+        assert.equals(300, roxana.precioViaje(anaMaria,10))
+    }
+
+    test "Lleva 10km a Teresa sin modificar el valor por kilometro pactado"{
+        assert.equals(220, roxana.precioViaje(teresa,10))
+    }
+
+    test "Lleva 2km a Ludmila"{
+        assert.equals(36, roxana.precioViaje(ludmila,2))
+    }
+
+    test "Lleva 2km a Ana Maria economicamente estable"{
+        assert.equals(60, roxana.precioViaje(anaMaria,2))
+    }
+
+    test "Lleva 2km a Teresa sin modificar el valor por kilometro pactado"{
+        assert.equals(44, roxana.precioViaje(teresa,22))
+    }
+}
+
+describe "Testing de Gabriela"{
+    test "Lleva 10km a Ludmila"{
+        assert.equals(216, roxana.precioViaje(ludmila,10))
+    }
+
+    test "Lleva 10km a Ana Maria economicamente estable"{
+        assert.equals(360, roxana.precioViaje(anaMaria,10))
+    }
+
+    test "Lleva 10km a Teresa sin modificar el valor por kilometro pactado"{
+        assert.equals(264, roxana.precioViaje(teresa,10))
+    }
+
+    test "Lleva 2km a Ludmila"{
+        assert.equals(43.20, roxana.precioViaje(ludmila,2))
+    }
+
+    test "Lleva 2km a Ana Maria economicamente estable"{
+        assert.equals(72, roxana.precioViaje(anaMaria,2))
+    }
+
+    test "Lleva 2km a Teresa sin modificar el valor por kilometro pactado"{
+        assert.equals(52.80, roxana.precioViaje(teresa,2))
+    }
+}
+
+describe "Testing de Mariela"{
+    test "Lleva 10km a Ludmila"{
+        assert.equals(180, roxana.precioViaje(ludmila,10))
+    }
+
+    test "Lleva 10km a Ana Maria economicamente estable"{
+        assert.equals(300, roxana.precioViaje(anaMaria,10))
+    }
+
+    test "Lleva 10km a Teresa sin modificar el valor por kilometro pactado"{
+        assert.equals(220, roxana.precioViaje(teresa,10))
+    }
+
+    test "Lleva 2km a Ludmila"{
+        assert.equals(50, roxana.precioViaje(ludmila,2))
+    }
+
+    test "Lleva 2km a Ana Maria economicamente estable"{
+        assert.equals(50, roxana.precioViaje(anaMaria,2))
+    }
+
+    test "Lleva 2km a Teresa sin modificar el valor por kilometro pactado"{
+        assert.equals(60, roxana.precioViaje(teresa,2))
+    }
+}
+
+describe "Testing de Juana"{
+    test "Lleva 10km a Ludmila"{
+        assert.equals(200, roxana.precioViaje(ludmila,10))
+    }
+
+    test "Lleva 10km a Ana Maria economicamente estable"{
+        assert.equals(200, roxana.precioViaje(anaMaria,10))
+    }
+
+    test "Lleva 10km a Teresa sin modificar el valor por kilometro pactado"{
+        assert.equals(200, roxana.precioViaje(teresa,10))
+    }
+
+    test "Lleva 2km a Ludmila"{
+        assert.equals(100, roxana.precioViaje(ludmila,2))
+    }
+
+    test "Lleva 2km a Ana Maria economicamente estable"{
+        assert.equals(100, roxana.precioViaje(anaMaria,2))
+    }
+
+    test "Lleva 2km a Teresa sin modificar el valor por kilometro pactado"{
+        assert.equals(100, roxana.precioViaje(teresa,2))
+    }
+}
+
+describe "Testing de Lucia"{
+    test "No puede reemplazarse a si misma"{
+        assert.throwsExceptionWithMessage("No se puede reemplazar a si misma", {lucia.remiseraReemplazada(lucia)})
+    }
+
+    test "Puede reemplazar a Roxana"{
+        assert.doesNotThowException({lucia.remiseraReemplazada(roxana)})
+    }
+
+    test "Puede reemplazar a Gabriela"{
+        assert.doesNotThowException({lucia.remiseraReemplazada(gabriela)})
+    }
+
+    test "Puede reemplazar a Mariela"{
+        assert.doesNotThowException({lucia.remiseraReemplazada(mariela)})
+    }
+
+    test "Puede reemplazar a Juana"{
+        assert.doesNotThowException({lucia.remiseraReemplazada(juana)})
+    }
+
+    test "Reemplaza a Mariela y lleva 10km a Melina que reemplaza a Ludmila"{
+        melina.clienteReemplazada(ludmila)
+        lucia.remiseraReemplazada(mariela)
+        assert.equals(150, lucia.precioViaje(melina,10))
+    }
+
+    test "Reemplaza a Mariela y lleva 1km a Melina que reemplaza a Ludmila"{
+        melina.clienteReemplazada(ludmila)
+        lucia.remiseraReemplazada(mariela)
+        assert.equals(50, lucia.precioViaje(melina,1))
+    }
+
+    test "Reemplaza a Gabriela y lleva 10km a Melina que reemplaza a Ludmila"{
+        melina.clienteReemplazada(ludmila)
+        lucia.remiseraReemplazada(gabriela)
+        assert.equals(180, lucia.precioViaje(melina,10))
+    }
+
+    test "Reemplaza a Gabriela y lleva 1km a Melina que reemplaza a Ludmila"{
+        melina.clienteReemplazada(ludmila)
+        lucia.remiseraReemplazada(gabriela)
+        assert.equals(18, lucia.precioViaje(melina,1))
+    }
+}
